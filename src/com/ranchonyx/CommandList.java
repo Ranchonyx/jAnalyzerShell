@@ -43,6 +43,21 @@ public class CommandList {
                 System.out.print("\033\143");
             }
         });
+        commandHashMap.put("help", args -> {
+            System.out.println("" +
+                    "print <arg>: prints <arg>\n" +
+                    "quit: closes the application\n" +
+                    "clear: clears screen\n" +
+                    "help: this. literally this text\n" +
+                    "jar <arg: normal windows file path to jar>: load jar file\n" +
+                    "classes: display all classes inside loaded jar file\n" +
+                    "class: select a class to analyze\n" +
+                    "fields: display all fields in selected class\n" +
+                    "annotations: display all annotations in selected class\n" +
+                    "methods: display all method headers in selected class\n" +
+                    "bytecode: disply bytecode size and plaintext\n" +
+                    "saveBytecode: doesn't work properly, do not use\n");
+        });
 
         //Select stuff commands commands
         commandHashMap.put("jar", args -> {

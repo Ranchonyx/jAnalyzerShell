@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="jAnalyzerShell:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jAnalyzerShell_jar</output-path>
+    <root id="archive" name="jAnalyzerShell.jar">
+      <element id="module-output" name="jAnalyzerShell" />
+    </root>
+  </artifact>
+</component>

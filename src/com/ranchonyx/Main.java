@@ -10,6 +10,7 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        System.out.println("jAnalyzerShell by Felix Janetzki, nothing special.\n Type 'help' to get help.");
         while(running) {
 
                 System.out.printf("%s>>>",promptPrefix);
