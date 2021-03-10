@@ -9,14 +9,17 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         while(running) {
-            System.out.print(">>>");
 
-            String[] fullCmd = input.nextLine().split(" ");
-            String[] cmdArgs = Arrays.copyOfRange(fullCmd, 1, fullCmd.length);
-            String baseCmd = fullCmd[0];
+                System.out.print("Input>>>");
 
-            CommandProcessor.processCommand(baseCmd, cmdArgs);
-            System.out.println();
+
+                String[] fullCmd = input.nextLine().split(" ");
+                String[] cmdArgs = Arrays.copyOfRange(fullCmd, 1, fullCmd.length);
+                String baseCmd = fullCmd[0];
+
+                CommandProcessor.processCommand(baseCmd, cmdArgs);
+                System.out.println();
+
         }
     }
 }

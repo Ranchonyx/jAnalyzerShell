@@ -7,16 +7,23 @@ public class CommandList {
 
     public CommandList() {
 
-        commandHashMap.put("hello", args -> {
-            if(args.equals(null)) {
-                System.out.println("No arguments supplied.");
-            } else {
-                System.out.println("Hello there");
-            }
+        commandHashMap.put("print", args -> {
+                System.out.printf(">%s", args[0]);
         });
         commandHashMap.put("quit", args -> {
             Main.running = false;
             System.err.println("Quitting.");
+        });
+        commandHashMap.put("clear", args -> {
+            if (System.getProperty("os.name").contains("Windows")) {
+                for(int i = 0; i < 50; i++) {
+                    System.out.println("\b");
+                    System.out.flush();
+                }
+            }
+            else {
+                System.out.print("\033\143");
+            }
         });
     }
 
