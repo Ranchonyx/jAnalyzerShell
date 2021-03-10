@@ -1,8 +1,10 @@
 package com.ranchonyx;
 
 
+import java.net.MalformedURLException;
+
 public interface Command {
 
-    public void run(String[] args);
+    void run(String[] args);
 
 }

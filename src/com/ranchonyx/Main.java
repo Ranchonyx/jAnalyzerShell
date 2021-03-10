@@ -5,12 +5,14 @@ import java.util.Scanner;
 
 public class Main {
     public static boolean running = true;
-    public static void main(String[] args) {
+    public static String promptPrefix = "";
 
+
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         while(running) {
 
-                System.out.print("Input>>>");
+                System.out.printf("%s>>>",promptPrefix);
 
 
                 String[] fullCmd = input.nextLine().split(" ");
