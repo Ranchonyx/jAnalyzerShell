@@ -4,10 +4,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+    public static boolean running = true;
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
-        while(true) {
+        while(running) {
             System.out.print(">>>");
 
             String[] fullCmd = input.nextLine().split(" ");
