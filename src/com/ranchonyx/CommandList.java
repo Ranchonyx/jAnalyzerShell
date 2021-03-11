@@ -31,14 +31,9 @@ public class CommandList {
             System.err.println("Quitting.");
         });
         commandHashMap.put("clear", args -> {
-            if (System.getProperty("os.name").contains("Windows")) {
-                for(int i = 0; i < 50; i++) {
-                    System.out.println("\b");
-                    System.out.flush();
-                }
-            }
-            else {
-                System.out.print("\033\143");
+            for(int i = 0; i < 50; i++) {
+                System.out.println("\b");
+                System.out.flush();
             }
         });
         commandHashMap.put("help", args -> System.out.println("" +

@@ -17,10 +17,14 @@ public class Main {
 
 
                 String[] fullCmd = input.nextLine().split(" ");
-                String[] cmdArgs = Arrays.copyOfRange(fullCmd, 1, fullCmd.length);
-                String baseCmd = fullCmd[0];
+                if(fullCmd.length == 0) {
+                    System.err.println("[Error] Invalid Command");
+                } else {
+                    String[] cmdArgs = Arrays.copyOfRange(fullCmd, 1, fullCmd.length);
+                    String baseCmd = fullCmd[0];
 
-                CommandProcessor.processCommand(baseCmd, cmdArgs);
+                    CommandProcessor.processCommand(baseCmd, cmdArgs);
+                }
                 System.out.println();
 
         }
