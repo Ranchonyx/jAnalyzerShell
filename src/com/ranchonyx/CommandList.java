@@ -36,7 +36,7 @@ public class CommandList {
                 System.out.flush();
             }
         });
-        commandHashMap.put("help", args -> System.out.println("" +
+        commandHashMap.put("help", args -> System.out.print("" +
                 "print <arg>: prints <arg>\n" +
                 "quit: closes the application\n" +
                 "clear: clears screen\n" +
@@ -72,14 +72,14 @@ public class CommandList {
                     }
                     String className = entry.getName().substring(0, entry.getName().length() - 6);
                     className = className.replace('/', '.');
-                    System.out.println(className);
-                    classes.add(cl.loadClass(className));
-                    System.out.printf("Loaded %s\n",className);
-
+                    try {
+                        classes.add(cl.loadClass(className));
+                        System.out.printf("Loaded %s\n",className);
+                    } catch (NoClassDefFoundError e) {
+                        System.out.printf("[%s] NoCLassDefFound, invalid class in Jar\n", className);
+                    }
                 }
-
                 adjustPrompt("[JAR]: "+name);
-
             }
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
